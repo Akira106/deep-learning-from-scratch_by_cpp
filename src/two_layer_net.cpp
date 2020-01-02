@@ -61,8 +61,6 @@ void Two_layer_net::gradient(const MatrixXd &X, const MatrixXd &t){
     MatrixXd dout = this->last_layer->backward(t);
     for(int i=this->layers.size()-1;i>=0;i--){
         dout = this->layers[i]->backward(dout);
-        //cout <<"dout"<<endl;
-        //cout <<dout<<endl;
     }
 }
 
